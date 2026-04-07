@@ -28,11 +28,12 @@
 /* Main Title */
 .title {
     font-size: 12vw;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 6px;
     color: #d9d9d9;
     text-align: center;
     z-index: 2;
+    
 
     font-family: 'Manrope', sans-serif;
 
@@ -59,29 +60,32 @@
     from {
         opacity: 0;
         transform: translateY(30px);
-        letter-spacing: 2px;
+        transform: scaleX(1);
     }
 
     to {
         opacity: 1;
         transform: translateY(0);
-        letter-spacing: 6px;
+        transform: scaleX(1.2);
     }
 }
 
 /* Subtitle */
 .subtitle {
   margin-top: 12px;
-  font-size: 0.9rem;
+  font-size: clamp(10px, 2vw, 24px);
   letter-spacing: 5px;
-  color: #888;
+  color: #dbdbdb;
   text-align: center;
   z-index: 2;
+  font-weight: 900;
 
   font-family: 'Manrope', sans-serif;
 
-  opacity: 0;
+  opacity: 1;
   animation: textFade 3.5s ease-in forwards;
+  text-shadow:
+    1px 1px 0px #aaa;
 }
 
 /* Background zoom */
@@ -93,4 +97,50 @@
     100% {
         transform: scale(1.05);
     }
+}
+
+.modelCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;        /* above overlay (z-index 0), below text (z-index 2) */
+  pointer-events: none; /* so clicks pass through to text/buttons */
+  opacity: 0.7;
+}
+.title {
+  font-size: 12vw;
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #ffffff;
+  text-align: center;
+  z-index: 2;
+  font-family: 'Manrope', sans-serif;
+  opacity: 0;
+  animation: textFade 2.5s ease-in forwards;
+
+  /* 👇 3D effect */
+  text-shadow:
+    1px 1px 0px #aaa,
+    2px 2px 0px #999,
+    3px 3px 0px #888,
+    4px 4px 0px #777,
+    5px 5px 0px #666,
+    6px 6px 0px #555,
+    7px 7px 0px #444,
+    8px 8px 20px rgba(0,0,0,0.6);
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    text-shadow:
+    1px 1px 0px #aaa,
+    2px 2px 0px #999,
+    3px 3px 0px #888;
+  }
+}
+.title > .comma{
+    /* border:2px solid white; */
+    display: inline-block;
+    transform: scaleX(-1);
+    transform: rotate(180deg);
+    margin-left: -2vw;
 }
