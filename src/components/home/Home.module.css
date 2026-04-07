@@ -1,0 +1,96 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+
+    animation: zoomBg 12s ease-in-out infinite alternate;
+}
+
+/* Dark overlay with fade-in */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+/* Main Title */
+.title {
+    font-size: 12vw;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: #d9d9d9;
+    text-align: center;
+    z-index: 2;
+
+    font-family: 'Manrope', sans-serif;
+
+    opacity: 0;
+    animation: textFade 2.5s ease-in forwards;
+
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+
+/* Overlay fade */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+/* Text animation */
+@keyframes textFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        letter-spacing: 2px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 6px;
+    }
+}
+
+/* Subtitle */
+.subtitle {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  letter-spacing: 5px;
+  color: #888;
+  text-align: center;
+  z-index: 2;
+
+  font-family: 'Manrope', sans-serif;
+
+  opacity: 0;
+  animation: textFade 3.5s ease-in forwards;
+}
+
+/* Background zoom */
+@keyframes zoomBg {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
