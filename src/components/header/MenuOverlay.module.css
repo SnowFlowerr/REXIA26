@@ -2,7 +2,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: #633869;
+   background: #2e1155;
   z-index: 99;
 
   opacity: 0;
@@ -131,7 +131,7 @@
   border: 1px solid rgba(255,255,255,0.2);
   /* padding: 10px; */
   border-radius: 50%;
-  color: white;
+  color: eef0f6;
   /* font-size: 12px; */
   width: 80px;
   align-content: center;
