@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import Header from './components/header/Header';
 import About from './components/about/About';
@@ -10,7 +10,7 @@ import Team from './components/team/Team';
 function App() {
   return (
     <div className='app'>
-      <Header></Header>
+      <Header/>
       <Home/>
       <About/>
       <Sponsors/>
