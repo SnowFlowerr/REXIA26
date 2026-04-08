@@ -2,7 +2,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-   background: #2e1155;
+  background: #000000;
   z-index: 99;
 
   opacity: 0;
@@ -95,12 +95,11 @@
   font-family: 'Manrope', sans-serif;
   font-weight: 900;
   transition: 0.3s;
-  
 }
 
 .item:hover .itemText {
-  color: white;
   transform: translateX(12px);
+  color: white;
 }
 
 /* RIGHT PANEL */
@@ -131,7 +130,7 @@
   border: 1px solid rgba(255,255,255,0.2);
   /* padding: 10px; */
   border-radius: 50%;
-  color: eef0f6;
+  color: white;
   /* font-size: 12px; */
   width: 80px;
   align-content: center;
@@ -179,13 +178,4 @@ span > img{
     .content {
         padding: 60px 60px 40px 50px;
     }
-}
-
-.dotMatrix {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 22px 22px;
-  pointer-events: none;
-  z-index: 0;
 }
