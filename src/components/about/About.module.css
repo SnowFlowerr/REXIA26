@@ -114,6 +114,7 @@
   justify-content: center;
   padding: 120px 48px;
   overflow: hidden;
+  background: #000;
 }
 
 .offeringsBgText {
@@ -199,10 +200,11 @@
 
 .card:hover {
   background: rgba(255,255,255,0.09);
+  /* height: 400px; */
 }
 
 .cardActive {
-  background: #2e1155;
+  background: #000000;
   border-color: rgba(255,255,255,0.18);
 }
 
@@ -333,3 +335,12 @@
   .statItem { padding: 32px 20px; }
   .stats { padding: 80px 24px; }
 }
+
+/* .dotMatrix {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+} */

@@ -180,3 +180,12 @@ span > img{
         padding: 60px 60px 40px 50px;
     }
 }
+
+.dotMatrix {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}

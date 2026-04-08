@@ -37,6 +37,7 @@ export default function About() {
 
   return (
     <div className={styles.page}>
+      {/* <div className={styles.dotMatrix}> */}
 
       {/* ── HERO SECTION ── */}
       <section className={styles.hero}>
@@ -68,6 +69,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      {/* <div/> */}
 
       {/* ── OFFERINGS SECTION ── */}
       <section className={styles.offerings} ref={sectionRef}>
@@ -131,7 +133,7 @@ export default function About() {
       </section>
 
       {/* ── STATS SECTION ── */}
-      <section className={styles.stats}>
+      {/* <section className={styles.stats}>
         <div className={styles.statsBgText} aria-hidden="true">IMPACT</div>
         <div className={styles.statsGrid}>
           {[
@@ -146,7 +148,8 @@ export default function About() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+
 
     </div>
   );

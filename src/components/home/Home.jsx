@@ -29,7 +29,7 @@ export default function Home() {
       <div className={styles.overlay} />
 
       {/* 3D Model — sits between overlay and text */}
-      <div className={styles.modelCanvas}>
+      {/* <div className={styles.modelCanvas}>
         <Canvas camera={{ position: [0, 2, 5], fov: 45 }}>
           <Suspense fallback={null}>
             <Stage environment="sunset" intensity={0.5}>
@@ -46,7 +46,7 @@ export default function Home() {
             maxPolarAngle={Math.PI / 2}
           />
         </Canvas>
-      </div>
+      </div> */}
 
       {/* Text on top */}
       <h1 className={styles.title}>REXIA<span className={styles.comma}>,</span>26</h1>

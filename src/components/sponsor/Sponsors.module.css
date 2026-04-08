@@ -1,0 +1,249 @@
+/* SponsorsPage.module.css */
+
+/* ── Page ── */
+.page {
+  position: relative;
+  min-height: 100vh;
+  background-color: #2e1155;
+  overflow: hidden;
+  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  padding-top: 100px;
+}
+
+/* ── Dot matrix texture ── */
+.dotMatrix {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Navbar ── */
+.navbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+}
+
+.logoText {
+  color: #eef0f6;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.menuBtn {
+  background: transparent;
+  border: 2px solid eef0f6;
+  color: #eef0f6;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menuBtn:hover {
+  background: #eef0f6;
+  color: #0a0a0a;
+}
+
+/* ── Title ── */
+.title {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #eef0f6;
+  font-size: clamp(48px, 9vw, 108px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 32px 0 56px;
+  animation: titleDrop 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes titleDrop {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Grid ── */
+.grid {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 48px 32px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  border-radius: 8px;
+  cursor: default;
+  /* Smooth position transition via layout animations */
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity   0.55s ease,
+    box-shadow 0.3s ease;
+  animation: cardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stagger card entrance */
+.card:nth-child(1)  { animation-delay: 0.05s; }
+.card:nth-child(2)  { animation-delay: 0.10s; }
+.card:nth-child(3)  { animation-delay: 0.15s; }
+.card:nth-child(4)  { animation-delay: 0.20s; }
+.card:nth-child(5)  { animation-delay: 0.25s; }
+.card:nth-child(6)  { animation-delay: 0.30s; }
+.card:nth-child(7)  { animation-delay: 0.35s; }
+.card:nth-child(8)  { animation-delay: 0.40s; }
+.card:nth-child(9)  { animation-delay: 0.45s; }
+.card:nth-child(10) { animation-delay: 0.50s; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: scale(0.8) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Hover lift */
+.card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.12);
+  z-index: 2;
+}
+
+/* Swap animation — flash + scale pop */
+.swapping {
+  animation: swapPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+}
+
+@keyframes swapPop {
+  0%   { transform: scale(1);    opacity: 1;    filter: brightness(1); }
+  25%  { transform: scale(0.88); opacity: 0.5;  filter: brightness(2.5); }
+  60%  { transform: scale(1.10); opacity: 1;    filter: brightness(1.6); }
+  100% { transform: scale(1);    opacity: 1;    filter: brightness(1); }
+}
+
+/* Light-bg cards (Blue Turtle, Snacks Junction) */
+.lightCard {
+  background: eef0f6;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* ── Floating inner animation ── */
+.innerFloat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  animation: floatLogo 3.5s ease-in-out infinite;
+}
+
+/* Each card floats at a slightly different phase */
+.card:nth-child(odd)  .innerFloat { animation-delay: 0s; }
+.card:nth-child(even) .innerFloat { animation-delay: 1.75s; }
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* ── Logo wrapper ── */
+.logoWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrapper svg {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+.card:hover .logoWrapper svg {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
+}
+
+/* ── Hint footer ── */
+.hint {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hintDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.5); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+    padding: 0 20px 48px;
+  }
+
+  .title {
+    font-size: 40px;
+    margin: 20px 0 32px;
+  }
+
+  .navbar {
+    padding: 14px 20px;
+  }
+}

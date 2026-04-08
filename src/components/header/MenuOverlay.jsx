@@ -7,6 +7,7 @@ import x from "../../assets/x.png";
 export default function MenuOverlay({ open, setOpen }) {
   return (
     <div className={`${styles.overlay} ${open ? styles.show : ""}`}>
+        <div className={styles.dotMatrix}>
       
 
       {/* MAIN CONTENT */}
@@ -38,12 +39,13 @@ export default function MenuOverlay({ open, setOpen }) {
 
           <div>
             <h4>Get in Touch</h4>
-            <p>neutronfest@nst.rishihood.edu.in</p>
+            <p>bhudeokrit@gmail.com</p>
           </div>
 
           <button className={styles.cta}>Contact Us →</button>
         </div>
 
+      </div>
       </div>
     </div>
   );
