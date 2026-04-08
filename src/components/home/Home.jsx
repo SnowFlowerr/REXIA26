@@ -1,23 +1,23 @@
 import styles from "./Home.module.css";
 import bg from "../../assets/bg.jpg";
-import { Suspense, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
-import { useGLTF, OrbitControls, Stage } from "@react-three/drei";
-import { Box3, Vector3 } from "three";
+// import { Suspense, useEffect } from "react";
+// import { Canvas } from "@react-three/fiber";
+// import { useGLTF, OrbitControls, Stage } from "@react-three/drei";
+// import { Box3, Vector3 } from "three";
 
-function Model() {
-  const { scene } = useGLTF("/model.gltf"); // 👈 your model file
+// function Model() {
+//   const { scene } = useGLTF("/model.gltf"); // 👈 your model file
 
-  useEffect(() => {
-    const box = new Box3().setFromObject(scene);
-    const size = new Vector3();
-    box.getSize(size);
-    const maxDim = Math.max(size.x, size.y, size.z);
-    scene.scale.setScalar(2 / maxDim);
-  }, [scene]);
+//   useEffect(() => {
+//     const box = new Box3().setFromObject(scene);
+//     const size = new Vector3();
+//     box.getSize(size);
+//     const maxDim = Math.max(size.x, size.y, size.z);
+//     scene.scale.setScalar(2 / maxDim);
+//   }, [scene]);
 
-  return <primitive object={scene} position={[0, -1, 0]} />;
-}
+//   return <primitive object={scene} position={[0, -1, 0]} />;
+// }
 
 export default function Home() {
   return (
@@ -55,4 +55,4 @@ export default function Home() {
   );
 }
 
-useGLTF.preload("/model.gltf");
+// useGLTF.preload("/model.gltf");

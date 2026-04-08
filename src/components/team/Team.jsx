@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Team.module.css";
 
 // Placeholder student cards — replace src with real photo URLs

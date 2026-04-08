@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
@@ -116,7 +116,7 @@ export default function Contact() {
           <div className={styles.infoCard}>
             <p className={styles.cardLabel}>CONNECT</p>
             <div className={styles.socialRow}>
-              <a href="#" className={styles.socialBtn}>
+              <a href="https://instagram.com" className={styles.socialBtn}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" strokeWidth="2" fill="none"/>
                   <circle cx="12" cy="12" r="4" stroke="white" strokeWidth="2" fill="none"/>
@@ -124,13 +124,13 @@ export default function Contact() {
                 </svg>
                 Instagram
               </a>
-              <a href="#" className={styles.socialBtn}>
+              <a href="https://instagram.com" className={styles.socialBtn}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.738-8.835L1.254 2.25H8.08l4.252 5.622L18.244 2.25z" fill="white"/>
                 </svg>
                 X
               </a>
-              <a href="#" className={styles.socialBtn}>
+              <a href="https://instagram.com" className={styles.socialBtn}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                   <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="white" strokeWidth="2" fill="none"/>
                   <rect x="2" y="9" width="4" height="12" stroke="white" strokeWidth="2" fill="none"/>
